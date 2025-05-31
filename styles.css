@@ -62,7 +62,7 @@ main {
   box-shadow: var(--shadow-card);
   padding: var(--container-padding);
   text-align: center;
-  min-inline-size: var(--container-min-inline-size);
+  min-inline-size: min(100%, var(--container-min-inline-size));
   inline-size: min(100%, var(--container-max-inline-size));
 }
 
@@ -75,7 +75,7 @@ main {
 h1 {
   font-size: var(--font-size-heading);
   color: var(--color-slate-900);
-  margin-block: 1.25em 0.625em;
+  margin-block: clamp(1em, 2vw, 1.25em) clamp(0.5em, 1vw, 0.625em);
 }
 
 p {
@@ -88,7 +88,7 @@ p {
   font-size: var(--font-size-attribution);
   text-align: center;
   margin-block-start: 0;
-  margin-block-end: 0.5em;
+  margin-block-end: clamp(0.25em, 1vw, 0.5em);
 }
 
 .attribution a {
@@ -99,7 +99,7 @@ p {
 @media (min-width: 40em) {
   .card {
     padding: calc(var(--container-padding) * 1.2);
-    min-inline-size: 22em;
+    min-inline-size: min(100%, 22em);
     inline-size: min(100%, 24em);
   }
 }
