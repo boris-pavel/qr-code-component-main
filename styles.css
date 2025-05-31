@@ -18,7 +18,9 @@
   --gap-container: 1.5em;
   --shadow-card: 0 0.333em 1em rgba(0, 0, 0, 0.1);
   --container-min-inline-size: 18em;
-  --container-max-inline-size: min(90vw, 19em);
+  --container-max-inline-size: min(90vw, 22em);
+  --container-padding: clamp(1em, 4vw, 2em);
+  --container-gap: clamp(1em, 4vw, 2em);
 }
 
 /* General styles */
@@ -33,7 +35,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap-container);
+  gap: var(--container-gap);
 }
 
 main {
@@ -43,7 +45,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap-container);
+  gap: var(--container-gap);
 }
 
 .container {
@@ -58,11 +60,10 @@ main {
   background-color: var(--color-white);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  padding: var(--padding-card);
+  padding: var(--container-padding);
   text-align: center;
   min-inline-size: var(--container-min-inline-size);
-  max-inline-size: var(--container-max-inline-size);
-  inline-size: 100%;
+  inline-size: min(100%, var(--container-max-inline-size));
 }
 
 .qr-code {
@@ -95,10 +96,10 @@ p {
   text-decoration: none;
 }
 
-@media (min-width: 25em) {
+@media (min-width: 40em) {
   .card {
-    padding: calc(var(--padding-card) * 1.2);
-    min-inline-size: 20em;
-    max-inline-size: 22em;
+    padding: calc(var(--container-padding) * 1.2);
+    min-inline-size: 22em;
+    inline-size: min(100%, 24em);
   }
 }
